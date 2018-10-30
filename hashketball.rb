@@ -127,7 +127,7 @@ def num_points_scored(name)
     players_hash.each do |player_details_hash, v|
       binding.pry
       if player_details_hash == name 
-        return player_details_hash[:points]
+        answer = player_details_hash[:points]
       end 
     end
   end
