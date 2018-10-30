@@ -73,7 +73,7 @@ def game_hash
           :blocks => 7,
           :slam_dunks => 2
         },
-        "Bismak Biyombo" => {
+        "Bismack Biyombo" => {
           :number => 0, 
           :shoe => 16,
           :points => 12,
@@ -120,15 +120,22 @@ def game_hash
   game 
 end 
 
-def num_points_scored(player)
-  if game_hash[:home][:players].include?(player)
-    return game_hash[:home][:players][player][:points]
-  elsif game_hash[:away][:players].include?(player)
-    return game_hash[:away][:players][player][:points]
-  else 
-    "No person."
+def num_points_scored(name)
+  box_score = game_hash
+  point = nil  
+  box_score.each do |location, team_data|
+    team_data[:players].each do |attribute, data|
+      if attribute == name 
+      data.each do |item, num| 
+        if item == :points 
+          point = num 
+        end 
+       end 
+      end 
+    end 
   end 
-end
+  point
+end 
   
 
 def shoe_size(name)
