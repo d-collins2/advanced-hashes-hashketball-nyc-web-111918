@@ -122,9 +122,9 @@ end
 
 def num_points_scored(player)
   if game_hash[:home][:players].include?(player)
-   game_hash[:home][:players][player][:stats][:points]
+   game_hash[:home][:players][player][:points]
   elsif game_hash[:away][:players].include?(player)
-   game_hash[:away][:players][player][:stats][:points]
+   game_hash[:away][:players][player][:points]
   else
    "No player found."
   end
