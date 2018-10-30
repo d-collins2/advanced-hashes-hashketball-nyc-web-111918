@@ -130,6 +130,7 @@ def num_points_scored(name)
       if attribute == name 
         point = players[attribute][:points]
       end 
+          binding.pry 
     end 
   end 
   point
