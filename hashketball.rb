@@ -1,7 +1,7 @@
 # Write your code here!
 require "pry"
 
-def game_hash
+
   game = {
     :home => {
       :team_name => "Brooklyn Nets",
@@ -117,11 +117,10 @@ def game_hash
     }
   }
   
-  game 
-end 
+ 
 
 def num_points_scored(name)
-  box_score = game_hash
+  box_score = game
   point = nil  
   box_score.each do |location, team_data|
     team_data[:players].each do |attribute, data|
