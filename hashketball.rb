@@ -143,10 +143,10 @@ end
 
 def team_colors(team)
   new_array = []
-  game_hash.each do |keys, values|
-    values.each do |data_labels, data|
+  game_hash.each do |location, type|
+    type.each do |data_labels, data|
       if data == team
-        new_array << game_hash[keys][:colors]
+        new_array << game_hash[location][:colors]
       end
     end
   end
@@ -156,8 +156,8 @@ end
 
 def team_names 
   new_array = []
-  game_hash.each do |keys, values|
-    values.each do |data_labels, data|
+  game_hash.each do |location, type|
+    type.each do |data_labels, data|
       if data_labels == :team_name
         new_array << data
       end
@@ -169,21 +169,9 @@ end
 def player_numbers(team)
   new_array = []
   if game_hash[:home][:team_name] == team
-    game_hash[:home][:players].each do |name, stats|
-      stats.each do |stat_label, stat_value|
-        if stat_label == :number
-          new_array << stat_value
-        end
-      end
-    end
+    new_array << game_hash[:home][:players][:number]
   else 
-    game_hash[:away][:players].each do |name, stats|
-      stats.each do |stat_label, stat_value|
-        if stat_label == :number
-          new_array << stat_value
-        end
-      end
-    end
+    new_array << game_hash[:away][:players][:number]
   end
   new_array
 end 
