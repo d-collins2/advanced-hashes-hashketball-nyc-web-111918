@@ -120,20 +120,14 @@ def game_hash
   game 
 end 
 
-def num_points_scored(name)
-  box_score = game_hash
-  point = nil  
-  box_score.each do |location, team_data|
-    players = team_data[:players]
-    players.each do |attribute, data|
-      if attribute == name 
-        attribute.each do |stat|
-          point = attribute[:points]
-        end
-      end 
-    end 
-  end 
-  point
+def num_points_scored(player)
+  if game_hash[:home][:players].include?(player)
+   game_hash[:home][:players][player][:stats][:points]
+  elsif game_hash[:away][:players].include?(player)
+   game_hash[:away][:players][player][:stats][:points]
+  else
+   "No player found."
+  end
 end 
   
 
