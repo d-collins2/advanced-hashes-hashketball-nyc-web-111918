@@ -124,7 +124,8 @@ def num_points_scored(name)
   box_score = game_hash
   point = nil  
   box_score.each do |location, team_data|
-    team_data[:players].each do |attribute, data|
+    players = team_data[:players]
+    players.each do |attribute, data|
       if attribute == name 
       data.each do |item, num| 
         if item == :points 
