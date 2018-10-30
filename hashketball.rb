@@ -123,6 +123,11 @@ end
 def num_points_scored(player)
   if game_hash[:home][:players].include?(player)
     return game_hash[:home][:players][name][:points]
+  elsif game_hash[:away][:players].include?(player)
+    return game_hash[:away][:players][name][:points]
+  else 
+    "No person."
+  end 
 end
   
 
