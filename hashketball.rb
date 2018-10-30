@@ -121,21 +121,14 @@ def game_hash
 end 
 
 def num_points_scored(name)
-  box_score = game_hash
-  point = nil  
-  box_score.each do |location, team_data|
-    team_data[:players].each do |attribute, data|
-      if attribute == name 
-      data.each do |item, num| 
-        if item == :points 
-          point = num 
-        end 
-       end 
-      end 
-    end 
-  end 
-  point
-end 
+  answer = nil 
+  game_hash.each do |team, team_info_hash|
+    players_hash =  team_info_hash[:players]
+    players_hash.each do |player_details_hash|
+      if player_details_hash[:name] == name
+    end
+  end
+end
   
 
 def shoe_size(name)
