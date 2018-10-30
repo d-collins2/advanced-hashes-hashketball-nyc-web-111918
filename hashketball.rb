@@ -127,7 +127,8 @@ def num_points_scored(name)
     players = team_data[:players]
     players.each do |attribute, data|
       if attribute == name 
-        return players[name][:points]
+        attribute.each do |stat|
+          point = attribute[:points]
       end 
     end 
   end 
