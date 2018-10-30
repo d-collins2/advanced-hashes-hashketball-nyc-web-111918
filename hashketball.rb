@@ -132,7 +132,13 @@ end
   
 
 def shoe_size(name)
-  
+  if game_hash[:home][:players].include?(player)
+   game_hash[:home][:players][player][:shoe]
+  elsif game_hash[:away][:players].include?(player)
+   game_hash[:away][:players][player][:shoe]
+  else
+   "No player found."
+  end
 end 
 
 def team_colors(team)
