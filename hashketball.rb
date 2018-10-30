@@ -129,6 +129,7 @@ def num_points_scored(name)
       if attribute == name 
         attribute.each do |stat|
           point = attribute[:points]
+        end
       end 
     end 
   end 
