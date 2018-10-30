@@ -126,6 +126,7 @@ def num_points_scored(name)
   box_score.each do |location, team_data|
     players = team_data[:players]
     players.each do |attribute, data|
+      binding.pry 
       if attribute == name 
         point = players[attribute][:points]
       end 
