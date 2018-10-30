@@ -127,12 +127,11 @@ def num_points_scored(name)
     players = team_data[:players]
     players.each do |attribute, data|
       if attribute == name 
-        point = players[attribute][:points]
+        return players[attribute][:points]
       end 
-          binding.pry 
     end 
   end 
-  point
+  
 end 
   
 
